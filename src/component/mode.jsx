@@ -5,7 +5,7 @@ const Modeld = () => {
 
     
     const getstorageMode=()=>{
-let darkmo='light';
+let darkmo='dark';
 if(localStorage.getItem('mode')){
     darkmo=localStorage.getItem('mode');
 }

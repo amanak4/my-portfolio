@@ -32,7 +32,9 @@
 }
 
 .active-nav .nav__icon,
-.active-nav .nav__name{
+.active-nav .nav__name,
+.scrolled .nav__icon,
+.scrolled .nav__name{
     color:  hsl(271, 76%, 53%);
 }
 
@@ -134,12 +136,13 @@
     }
   
 
-    .nav__link:hover,.active-nav{
+    .nav__link:hover,.active-nav,.scrolled{
         background-color:  hsl(271, 76%, 53%);
     }
 
     .nav-link:hover .nav__icon,
-    .active-nav .nav__icon{
+    .active-nav .nav__icon,
+    .scrolled .nav__icon{
         color: var(--text-white);
     } 
    }  

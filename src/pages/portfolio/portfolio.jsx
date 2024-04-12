@@ -1,12 +1,32 @@
-import React from 'react'
-// import { FaGithub, FaInfoCircle, FaLink } from 'react-icons/fa'
+import React, { useEffect, useState } from 'react'
 import './portfolio.css';
-// import recipefinder from '../../assets/curry-g5ff3af663_1280.jpg'
 import { portfolio } from '../../data';
 import Portfolioitems from '../../component/portfolioitems';
+import Reveal from '../../reveal';
 const Portfolio = () => {
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+     if(scrollTop>=1590&&scrollTop<2400){
+        setIsScrolled(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  /*---------------*/
+
+
   return (
-    <div>
+    <div className={isScrolled?'scroll_animation':'without_animation'} id='Portfolio'>
        <h1 className='heading'>My </h1>
        <div className='projects'>
 
@@ -16,7 +36,7 @@ const Portfolio = () => {
         })
        }
       
-       </div> 
+       </div>
        </div>
   )
 }

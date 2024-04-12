@@ -1,3 +1,12 @@
+ html{
+    scroll-behavior: smooth;
+ }
+ 
+ body {
+    /* background-color: #8a2be2; fallback for old browsers */
+    /* background-image:url(./assets/dp2.jpg); Violet to lighter violet */
+}
+
  @media screen and (max-width:1180px) {
     .container{
         max-width:720px;

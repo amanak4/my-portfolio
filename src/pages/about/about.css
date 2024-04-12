@@ -1,5 +1,7 @@
 
-
+#about{
+    margin-top: 20px;
+}
 .about__heading{
     display: flex;
      height: 20vh;
@@ -49,6 +51,8 @@ flex-direction: column;
     margin-top: 40px ;
 }
 
+
+
 .about__data span+span{
    font-weight: var(--weight-700);
 }
@@ -59,12 +63,19 @@ flex-direction: column;
 }
 
 @media screen and (max-width:1200px) {
+    #about{
+        margin-top: 100px;
+    }
+    
     .about__img{
        width: 0vw;
     }
     .about__list{
         display: flex;
         flex-direction: column;
+    }
+    .about__data{
+        width: 80vw;
     }
 }
 
@@ -111,10 +122,30 @@ flex-direction: column;
     height:120px;
 }
 
+.circle-animation {
+    animation: scaleUp 0.5s ease forwards;
+    transform-origin: center;
+
+}
+
+
+@keyframes scaleUp {
+    0% {
+      transform: scale(0);  
+    }
+    100% {
+      transform: scale(1);
+    }   
+}
+
+  
+  /* Apply the animation to the CircularProgressbar */
+
 .CircularProgressbar-path {
     stroke: hsl(271, 76%, 53%) !important;
-    stroke-linecap: butt   !important;
-}
+    stroke-linecap: butt !important;
+  }
+ 
 
 .CircularProgressbar-trial{
     stroke: var(--container-color) !important;

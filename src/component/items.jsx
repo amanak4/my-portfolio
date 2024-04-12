@@ -1,5 +1,6 @@
 import React from 'react'
 import { personalInfo } from '../../src/data'
+import Reveal from '../reveal'
 
 const Items = () => {
   return (
@@ -7,9 +8,10 @@ const Items = () => {
        {personalInfo.map(({title,description},index)=>
                {
                 return(
-                    <li className='about__data'>
+                  <Reveal key={index}>  <li className='about__data'>
                      <span>{title}</span><span>{description}</span>
                     </li>
+                    </Reveal>
                 )
                } )}
     </ul>

@@ -16,6 +16,7 @@ color:  hsl(271, 76%, 53%);
 margin: 15px;
 }
 
+
 .content{
     margin-top: 40px;
     display: grid;
@@ -37,7 +38,9 @@ margin: 15px;
 
 .site{
     margin-right: 15px;
-   
+    position: relative;
+    left: 10%;
+    margin-bottom: 10px;
 }
 .iconl{
     color: var(--text-color);
@@ -72,6 +75,9 @@ margin: 15px;
     top:40px;
 }
 
+.detail{
+    display: flex;
+}
 @media screen and (max-width:1024px){
     .content{
         display: flex;

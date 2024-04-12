@@ -1,55 +1,47 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter} from 'react-router-dom';
 import Modeld from './component/mode';
 import Navbar from './component/navbar';
 import Home from './pages/home/home';
 import About from './pages/about/about';
 import Portfolio from './pages/portfolio/portfolio';
 import Contact from './pages/contact/contact';
-import { Element } from 'react-scroll';
 import './app.css';
-
-
-function App() {
+import './loading.css';
+function LoadingPage() {
   return (
+    <div className="loading-page">
+      <div className="loader"></div>
+      
+    </div>
+  );
+}
+function App() {
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate data fetching or initialization
+    setTimeout(() => {
+      setIsLoading(false); // Set loading state to false after 2 seconds
+    }, 2000);
+  }, []);
+
+  return (
+    <div className="app">
+    {isLoading ? <LoadingPage /> :(
     <BrowserRouter>
-      <Navbar />
       <Modeld />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Element name="home" className="element">
-              <Home />
-            </Element>
-          }
-        />
-        <Route
-          path="about"
-          element={
-            <Element name="about" className="element">
-              <About />
-            </Element>
-          }
-        />
-        <Route
-          path="portfolio"
-          element={
-            <Element name="portfolio" className="element">
-              <Portfolio />
-            </Element>
-          }
-        />
-        <Route
-          path="contact"
-          element={
-            <Element name="contact" className="element">
-              <Contact />
-            </Element>
-          }
-        />
-      </Routes>
+      <Navbar />
+      <Home />
+      <About />
+      <Portfolio />
+      <Contact />
     </BrowserRouter>
+    )}
+    </div>
+
+  
   );
 }
 
