@@ -28,7 +28,7 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
+    <div className={isLoading ? 'loading' : 'app'}>
     {isLoading ? <LoadingPage /> :(
     <BrowserRouter>
       <Modeld />

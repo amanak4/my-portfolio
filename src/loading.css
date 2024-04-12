@@ -1,11 +1,12 @@
-/* .app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-  } */
+.loading{
+    background-color: black;
+    height: 100vh;
+    overflow:hidden;
+}
+
 
 .loading-page {
+    /* background-color: black; */
     text-align: center;
     position: relative;
     top:45vh;
